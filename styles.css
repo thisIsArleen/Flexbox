@@ -1,0 +1,185 @@
+html {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	height: 100%
+}
+
+article,
+aside,
+footer,
+header {
+	padding: 2px;
+	box-sizing: border-box;
+}
+
+/*4. The header is 100px high and occupy the whole width while the footer is 40px high and occupy the whole width.*/
+
+header {
+
+	background-color: yellow;
+	height: 100px;
+	width: 100%;
+
+}
+
+
+div {
+	text-align: center;
+}
+
+/* outline: 2px dashed blue; */
+
+/*5.The nav element, placed below the header, is the container for three divs. Each div contains the menu as shown in the picture.
+     The nav element minimum height is set to be 40px. The nav element is set to be displayed as flexbox. 
+     You need to setup each flex items (the divs) such that when it is tablet (<600px) and desktop (>768px) mode, 
+     there are rendered as one row of menu. However, they will be displayed in three rows in the mobile mode. 
+     You need to be careful with the height of nav and overflow of the flex items.
+    */
+
+nav {
+	background-color: beige;
+	display: flexbox;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 40px 0;
+}
+
+
+article {
+
+	background-color: aquamarine;
+	width: 80%;
+	height: 150px;
+	float: left;
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	justify-content: center;
+
+}
+
+article div {
+
+	background-color: rgb(255, 145, 0);
+	padding: 3px;
+	border: 3px;
+	border: dotted;
+	height: 40%;
+	border-color: brown;
+}
+
+
+aside {
+	/* outline: 2px dashed blue; */
+	background-color: rgb(60, 255, 0);
+	float: left;
+	min-width: 20%;
+	height: 150px;
+	box-sizing: border-box;
+
+}
+
+/*8.The footer needs to be below both the article and aside element and occupy the whole width of the screen.*/
+footer {
+
+	background-color: rgb(193, 158, 226);
+	height: 40px;
+	width: 100%;
+	float: left;
+}
+
+
+
+@media only screen and (max-width:480px) {
+	nav>div {
+		min-width: 40%;
+		width: 100%;
+	}
+
+	article {
+		width: 100%;
+	}
+
+	article div {
+		margin: 2.5% 5%;
+	}
+
+	aside {
+		display: none;
+	}
+
+}
+
+@media only screen and (min-width:481px) and (max-width: 600px) {
+
+	article {
+
+		display: flex;
+		justify-content: safe;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	/*article div{
+		  margin: 2.5% 5%;
+		
+	} */
+
+	article div.oneF {
+		height: 10%;
+		width: 40.5%;
+		justify-self: flex-start;
+		margin-bottom: 4%;
+		margin-top: 5%;
+		margin-right: 13px;
+	}
+
+	article div.twoF {
+		height: 10%;
+		width: 40.5%;
+		justify-self: flex-start;
+		margin-bottom: 4%;
+		margin-top: 5%;
+		margin-left: 13px;
+	}
+
+	article div.threeF {
+		height: 10%;
+		width: 90%;
+		margin-bottom: 20%;
+	}
+
+}
+
+
+@media only screen and (min-width: 600px) {
+
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	article {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	article div {
+		margin: 2.5% 2%;
+		background-color: lightblue;
+	}
+
+	article div.oneF,
+	article div.twoF,
+	article div.threeF {
+		height: 10%;
+		width: 50%;
+	}
+
+	article div {
+		width: 100px;
+		flex: auto;
+	}
+}
